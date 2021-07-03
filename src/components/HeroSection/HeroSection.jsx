@@ -6,6 +6,7 @@ import {
   SearchButton,
   SearchForm,
   SearchSection,
+  HeroSectionHeading,
 } from './HeroSection.elements';
 
 const HeroSection = () => {
@@ -13,7 +14,9 @@ const HeroSection = () => {
     <BannerArea>
       <Container>
         <MiddleSection>
-          <h1>LIFE'S TOO SHORT FOR BORING FOOD</h1>
+          <HeroSectionHeading>
+            LIFE'S TOO SHORT FOR BORING FOOD
+          </HeroSectionHeading>
           <SearchForm>
             <SearchSection type='text' placeholder='Search for your food' />
             <SearchButton type='submit'>Search</SearchButton>
