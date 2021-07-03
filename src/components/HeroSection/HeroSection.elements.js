@@ -15,6 +15,11 @@ export const MiddleSection = styled.div`
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 400px) {
+    width: 50%;
+    margin: auto;
+  }
 `;
 
 export const SearchForm = styled.form`
@@ -30,11 +35,6 @@ export const SearchSection = styled.input`
   border-radius: 30px;
   margin-top: 30px;
   outline: none;
-
-  @media screen and (max-width: 400px) {
-    width: 50%;
-    margin: auto;
-  }
 `;
 
 export const SearchButton = styled.button`
