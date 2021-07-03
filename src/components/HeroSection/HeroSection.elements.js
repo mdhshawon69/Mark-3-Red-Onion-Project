@@ -30,6 +30,11 @@ export const SearchSection = styled.input`
   border-radius: 30px;
   margin-top: 30px;
   outline: none;
+
+  @media screen and (max-width: 400px) {
+    width: 50%;
+    margin: auto;
+  }
 `;
 
 export const SearchButton = styled.button`
