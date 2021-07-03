@@ -89,6 +89,7 @@ export const DetailsImage = styled.img`
     height: 300px;
     width: auto;
     margin-top: 50px;
+    margin-bottom: 30px;
   }
 `;
 
