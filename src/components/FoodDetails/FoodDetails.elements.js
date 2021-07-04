@@ -46,13 +46,14 @@ export const DetailsText = styled.p`
 
 export const DetailsPrice = styled.h3`
   font-size: 30px;
+  width: 100px;
 `;
 
 export const PricingCounter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 30px;
+  margin-left: 10px;
   margin-top: 2px;
   border: 1px solid #ccc;
   padding: 0 20px;

@@ -50,7 +50,7 @@ export const FooterSecond = styled.div`
   }
 
   @media screen and (max-width: 400px) {
-    margin-top: -50px;
+    margin-top: -63px;
   }
 `;
 
@@ -66,7 +66,7 @@ export const FooterThird = styled.div`
   }
 
   @media screen and (max-width: 400px) {
-    margin-top: -92px;
+    margin-top: -98px;
   }
 `;
 
@@ -115,6 +115,11 @@ export const FooterUlTwo = styled.ul`
   @media screen and (max-width: 768px) {
     flex-direction: column;
     margin-top: -17px;
+  }
+
+  @media screen and (max-width: 400px) {
+    flex-direction: column;
+    margin-top: -15px;
   }
 `;
 

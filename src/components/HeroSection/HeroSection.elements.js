@@ -3,15 +3,10 @@ import banner from '../../images/bannerbackground.png';
 
 export const BannerArea = styled.div`
   background-image: url(${banner});
-  padding: 320px 0;
+  height: 90vh;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-
-  @media screen and (max-width: 500px) {
-    height: 0;
-    padding: 200px 0;
-  }
 `;
 
 export const MiddleSection = styled.div`
@@ -20,12 +15,6 @@ export const MiddleSection = styled.div`
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  @media screen and (max-width: 768px) {
-    width: 80%;
-    margin: auto;
-    margin-top: -20px;
-  }
 `;
 
 export const SearchForm = styled.form`
@@ -59,14 +48,21 @@ export const SearchButton = styled.button`
   cursor: pointer;
   margin-left: -50px;
 
-  @media screen and (max-width: 500px) {
+  /* @media screen and (max-width: 768px) {
+    width: 40%;
+    margin-top: 0;
+    margin-left: -50px;
+  } */
+
+  @media screen and (max-width: 400px) {
     width: 40%;
     margin-top: 0;
   }
 `;
 
 export const HeroSectionHeading = styled.h1`
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 400px) {
     margin-bottom: 20px;
+    margin-top: 50px;
   }
 `;

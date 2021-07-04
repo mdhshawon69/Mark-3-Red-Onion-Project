@@ -17,28 +17,14 @@ import {
   DetailsImage,
   AddButton,
 } from './FoodDetails.elements';
-import { useState } from 'react';
+import { addToCart, decreaser, increaser } from '../../redux/actions/actions';
+import { connect } from 'react-redux';
 
-const FoodDetails = () => {
-  const [quantity, setQuantity] = useState([]);
+const FoodDetails = (props) => {
+  const { addToCart, increaser, foodQuantity, decreaser } = props;
   const { foodId } = useParams();
   const foodDetails = foods.find((food) => food.id == foodId);
   const { title, details, price, image, id } = foodDetails;
-
-  const handleIncrease = (id) => {
-    const newQuantity = foods.filter((item) => item.id === id);
-    setQuantity(newQuantity);
-  };
-
-  const handleDecrease = (id) => {
-    const newQuantity = quantity.filter((item) => item.id !== id);
-    setQuantity(newQuantity);
-  };
-
-  const handleAddToCart = (id) => {
-    const newCart = foods.filter((item) => item.id === id);
-    setQuantity(newCart);
-  };
 
   return (
     <div>
@@ -47,14 +33,16 @@ const FoodDetails = () => {
           <DetailsHeading>{title}</DetailsHeading>
           <DetailsText>{details}</DetailsText>
           <PricingContainer>
-            <DetailsPrice>${price}</DetailsPrice>
+            <DetailsPrice>
+              ${foodQuantity.length ? price * foodQuantity.length : price}
+            </DetailsPrice>
             <PricingCounter>
-              <Decreaser onClick={() => handleDecrease(id)}>-</Decreaser>
-              <ShownNumber>{quantity.length}</ShownNumber>
-              <Increaser onClick={() => handleIncrease(id)}>+</Increaser>
+              <Decreaser onClick={() => decreaser()}>-</Decreaser>
+              <ShownNumber>{foodQuantity.length}</ShownNumber>
+              <Increaser onClick={() => increaser(id)}>+</Increaser>
             </PricingCounter>
           </PricingContainer>
-          <AddButton onClick={() => handleAddToCart(id)}>
+          <AddButton onClick={() => addToCart(id)}>
             <AiOutlineShoppingCart style={{ marginRight: '5px' }} />
             Add
           </AddButton>
@@ -65,4 +53,14 @@ const FoodDetails = () => {
   );
 };
 
-export default FoodDetails;
+const mapStateToProps = (state) => {
+  return { foodQuantity: state.increasedOrDecreased };
+};
+
+const mapDispatchToProps = {
+  addToCart: addToCart,
+  increaser: increaser,
+  decreaser: decreaser,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FoodDetails);

@@ -32,6 +32,11 @@ export const FoodNavLink = styled(Link)`
     color: #f91944;
     transition: all 0.2s ease;
   }
+
+  &::active {
+    border-bottom: 3px solid #f91944;
+    color: #f91944;
+  }
 `;
 
 export const FoodItemsContainer = styled.div`
@@ -48,7 +53,7 @@ export const CheckOutBtn = styled.button`
   border: none;
   outline: none;
   border-radius: 3px;
-  background-color: #999;
+  background-color: ${({ cart }) => (cart.length ? '#f91944' : '#999')};
   color: #fff;
   margin-top: 20px;
   cursor: pointer;

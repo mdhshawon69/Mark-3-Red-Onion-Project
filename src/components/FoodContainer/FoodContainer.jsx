@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
 import FoodCard from '../FoodCard/FoodCard';
-import { foods } from '../../Foods/foods';
-import { selectedFood } from '../../Foods/foods';
 import {
   FoodNav,
   FoodNavContainer,
@@ -10,45 +7,58 @@ import {
   FoodItemsContainer,
   CheckOutBtn,
 } from './FoodContainer.elements';
+import { filterFoods } from '../../redux/actions/actions';
+import { connect } from 'react-redux';
 
-const FoodContainer = () => {
-  const [seletedFoods, setSelectedFoods] = useState(selectedFood);
+const FoodContainer = (props) => {
+  const { filterFoods, selectedFoods, cart } = props;
 
-  const filterFoods = (category) => {
-    const newSelectedFoods = foods.filter(
-      (foodItem) => foodItem.category === category
-    );
-    setSelectedFoods(newSelectedFoods);
+  const handleClick = () => {
+    cart.length ? console.log('clicked') : console.log();
   };
+
   return (
     <div>
       <FoodNavContainer>
         <FoodNav>
           <FoodNavItem>
-            <FoodNavLink onClick={() => filterFoods('breakfast')}>
+            <FoodNavLink to='/#' onClick={() => filterFoods('breakfast')}>
               BREAKFAST
             </FoodNavLink>
           </FoodNavItem>
           <FoodNavItem>
-            <FoodNavLink onClick={() => filterFoods('lunch')}>
+            <FoodNavLink to='/#' onClick={() => filterFoods('lunch')}>
               LUNCH
             </FoodNavLink>
           </FoodNavItem>
           <FoodNavItem>
-            <FoodNavLink onClick={() => filterFoods('dinner')}>
+            <FoodNavLink to='/#' onClick={() => filterFoods('dinner')}>
               DINNER
             </FoodNavLink>
           </FoodNavItem>
         </FoodNav>
       </FoodNavContainer>
       <FoodItemsContainer>
-        {seletedFoods.map((food) => (
+        {selectedFoods.map((food) => (
           <FoodCard key={food.id} food={food} />
         ))}
-        <CheckOutBtn>Checkout your food</CheckOutBtn>
+        <CheckOutBtn cart={cart} onClick={handleClick}>
+          Checkout your food
+        </CheckOutBtn>
       </FoodItemsContainer>
     </div>
   );
 };
 
-export default FoodContainer;
+const mapStateToProps = (state) => {
+  return {
+    selectedFoods: state.selectedFood,
+    cart: state.cart,
+  };
+};
+
+const mapDispatchToProps = {
+  filterFoods: filterFoods,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FoodContainer);

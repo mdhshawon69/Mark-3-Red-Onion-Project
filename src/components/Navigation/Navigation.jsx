@@ -15,8 +15,11 @@ import { Container } from '../GlobalStyles';
 import logo from '../../images/logo2.png';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Navigation = () => {
+const Navigation = (props) => {
+  const { cart } = props;
+  console.log(cart);
   return (
     <NavArea>
       <Container>
@@ -31,7 +34,7 @@ const Navigation = () => {
               <CartIcon>
                 <AiOutlineShoppingCart />
               </CartIcon>
-              <CartItemNumber>0</CartItemNumber>
+              <CartItemNumber>{cart.length}</CartItemNumber>
             </CartContainer>
           </CartLink>
           <ButtonLogin to='/login'>Log In</ButtonLogin>
@@ -42,4 +45,10 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+const mapStateToProps = (state) => {
+  return { cart: state.cart };
+};
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
