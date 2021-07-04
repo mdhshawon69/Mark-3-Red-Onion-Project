@@ -9,7 +9,7 @@ export const BannerArea = styled.div`
   background-size: cover;
 
   @media screen and (max-width: 400px) {
-    background-position: -20vw;
+    background-position: -40vw;
   }
 `;
 
