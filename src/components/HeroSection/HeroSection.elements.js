@@ -4,9 +4,13 @@ import banner from '../../images/bannerbackground.png';
 export const BannerArea = styled.div`
   background-image: url(${banner});
   height: 90vh;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media screen and (max-width: 400px) {
+    background-position: -20vw;
+  }
 `;
 
 export const MiddleSection = styled.div`
