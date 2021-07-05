@@ -19,6 +19,11 @@ export const MiddleSection = styled.div`
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    margin: auto;
+  }
 `;
 
 export const SearchForm = styled.form`
@@ -35,8 +40,8 @@ export const SearchSection = styled.input`
   margin-top: 30px;
   outline: none;
 
-  @media screen and (max-width: 768px) {
-    width: 60%;
+  @media screen and (max-width: 400px) {
+    width: 70%;
     margin: auto;
   }
 `;
@@ -51,12 +56,6 @@ export const SearchButton = styled.button`
   outline: none;
   cursor: pointer;
   margin-left: -50px;
-
-  /* @media screen and (max-width: 768px) {
-    width: 40%;
-    margin-top: 0;
-    margin-left: -50px;
-  } */
 
   @media screen and (max-width: 400px) {
     width: 40%;

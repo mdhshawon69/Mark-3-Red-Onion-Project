@@ -42,9 +42,7 @@ const FoodContainer = (props) => {
         {selectedFoods.map((food) => (
           <FoodCard key={food.id} food={food} />
         ))}
-        <CheckOutBtn cart={cart} onClick={handleClick}>
-          Checkout your food
-        </CheckOutBtn>
+        <CheckOutBtn cart={cart}>Checkout your food</CheckOutBtn>
       </FoodItemsContainer>
     </div>
   );

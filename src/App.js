@@ -1,4 +1,3 @@
-import './App.css';
 import Homepage from './components/Homepage/Homepage';
 import Navigation from './components/Navigation/Navigation';
 import GlobalStyles from './components/GlobalStyles';
@@ -7,6 +6,8 @@ import Footer from './components/Footer/Footer';
 import FoodDetails from './components/FoodDetails/FoodDetails';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
+import './App.css';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path='/signup'>
           <SignUp />
+        </Route>
+        <Route path='/cart'>
+          <Cart />
         </Route>
       </Switch>
       <Footer />
