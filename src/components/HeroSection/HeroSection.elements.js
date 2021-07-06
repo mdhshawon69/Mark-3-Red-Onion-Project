@@ -48,7 +48,7 @@ export const SearchSection = styled.input`
 `;
 
 export const SearchButton = styled.button`
-  padding: 14px 40px;
+  padding: 15px 40px;
   margin-top: 29px;
   background-color: #f91944;
   color: #fff;
@@ -68,6 +68,5 @@ export const HeroSectionHeading = styled.h1`
   @media screen and (max-width: 400px) {
     margin-bottom: 20px;
     margin-top: 50px;
-    color: #fff;
   }
 `;
