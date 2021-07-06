@@ -25,6 +25,10 @@ const FoodDetails = (props) => {
   const { foodId } = useParams();
   const foodDetails = foods.find((food) => food.id == foodId);
   const { title, details, price, image, id } = foodDetails;
+  const total = (
+    foodQuantity.length ? price * foodQuantity.length : price
+  ).toFixed(2);
+  const totalPrice = Number(total);
 
   return (
     <div>
@@ -33,9 +37,7 @@ const FoodDetails = (props) => {
           <DetailsHeading>{title}</DetailsHeading>
           <DetailsText>{details}</DetailsText>
           <PricingContainer>
-            <DetailsPrice>
-              ${foodQuantity.length ? price * foodQuantity.length : price}
-            </DetailsPrice>
+            <DetailsPrice>${totalPrice}</DetailsPrice>
             <PricingCounter>
               <Decreaser onClick={() => decreaser()}>-</Decreaser>
               <ShownNumber>{foodQuantity.length}</ShownNumber>

@@ -53,7 +53,7 @@ export const PricingCounter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 35px;
   margin-top: 2px;
   border: 1px solid #ccc;
   padding: 0 20px;

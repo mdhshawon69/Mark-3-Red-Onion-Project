@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const DeliveryTitle = styled.h3`
@@ -76,15 +77,17 @@ export const SubText = styled.p`
   text-transform: capitalize;
 `;
 
-export const OrderPlaceBtn = styled.button`
-  padding: 10px 20px;
+export const OrderPlaceBtn = styled(Link)`
+  padding: 15px 80px;
   border: none;
   border-radius: 4px;
   background-color: ${({ cart }) => (cart.length ? '#f91944' : '#999')};
-  width: 250px;
-  margin-top: 20px;
+  margin-top: 30px;
   color: #fff;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
 `;
 
 export const DeliveryDetails = styled.div`

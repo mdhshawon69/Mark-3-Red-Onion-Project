@@ -8,6 +8,7 @@ import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import './App.css';
 import Cart from './components/Cart/Cart';
+import DeliveryInfo from './components/DeliveryInfo/DeliveryInfo';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path='/cart'>
           <Cart />
+        </Route>
+        <Route path='/order-placed'>
+          <DeliveryInfo />
         </Route>
       </Switch>
       <Footer />

@@ -50,7 +50,9 @@ const Cart = (props) => {
         <SubText>Tax :</SubText>
         <SubText>Delivery Fee :</SubText>
         <MainText mar={true}>Total :</MainText>
-        <OrderPlaceBtn cart={cart}>Place Order</OrderPlaceBtn>
+        <OrderPlaceBtn to={cart.length ? '/order-placed' : '#'} cart={cart}>
+          Place Order
+        </OrderPlaceBtn>
       </DeliveryDetails>
     </CartContainer>
   );

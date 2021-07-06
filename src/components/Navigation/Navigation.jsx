@@ -19,7 +19,6 @@ import { connect } from 'react-redux';
 
 const Navigation = (props) => {
   const { cart } = props;
-  console.log(cart);
   return (
     <NavArea>
       <Container>
